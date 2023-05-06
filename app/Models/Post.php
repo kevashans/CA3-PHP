@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory;
     use Sluggable;
 
-    protected $fillable = ['title', 'slug', 'description', 'image_path', 'user_id'];
+    protected $fillable = ['title', 'slug', 'description', 'image_path', 'user_id','post_id'];
 
     public function user()
     {
@@ -22,7 +22,8 @@ class Post extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'title',
+                'post_id'=>'post_id'
             ]
         ];
     }
