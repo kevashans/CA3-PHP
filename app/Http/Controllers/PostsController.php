@@ -20,8 +20,9 @@ class PostsController extends Controller
      */
     public function index()
     {
+        $topicId = request()->input('topicId');
         return view('blog.index')
-            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+            ->with('posts', Post::where('topics_id', $topicId)->orderBy('updated_at', 'DESC')->get());
     }
 
     /**
@@ -57,10 +58,13 @@ class PostsController extends Controller
             'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $newImageName,
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user()->id,
+            'topics_id'=>$request->input('topics_id')
+            // 'post_id' => $request->input('post_id'),
+            
         ]);
 
-        return redirect('/blog')
+        return redirect('/blog?topicId=' . $request->input('topics_id'))
             ->with('message', 'Your post has been added!');
     }
 
@@ -72,6 +76,7 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
+       
         return view('blog.show')
             ->with('post', Post::where('slug', $slug)->first());
     }
@@ -108,6 +113,7 @@ class PostsController extends Controller
                 'description' => $request->input('description'),
                 'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
                 'user_id' => auth()->user()->id
+                
             ]);
 
         return redirect('/blog')

@@ -14,7 +14,8 @@ class Posts extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table){
-            $table->increments('id');
+            $table->id('id');
+            $table->unsignedBigInteger('topics_id');
             $table->string('slug');
             $table->string('title');
             $table->longText('description');
@@ -22,6 +23,8 @@ class Posts extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('topics_id')->references('id')->on('topics');
+
         });
     }
 
