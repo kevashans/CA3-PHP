@@ -20,21 +20,21 @@
 @if (Auth::check())
     <div class="pt-15 w-4/5 m-auto">
         <a 
-            href="/blog/create"
+            href="/forums/create"
             class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
-            Create post
+            Create Forum
         </a>
     </div>x
 @endif
 
 @foreach ($topics as $topic)
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
-        <div class="{{ asset('images/' . $topic->id) }}">
-            <img src="{{ asset('images/' . $topic->topic_image) }}" alt="">
+        <div >
+            <img src="{{ asset('image/' . $topic->topic_image) }}" alt="">
         </div>
         <div>
             <h2 class="text-gray-700 font-bold text-5xl pb-4">
-                {{ $topic->id }}
+                {{ $topic->topic_name }}
             </h2>
 
             {{-- <span class="text-gray-500">
