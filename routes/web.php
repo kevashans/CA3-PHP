@@ -23,3 +23,12 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/forum', 'ForumController@index');
+
+Route::get('/forums/create', 'ForumController@create');
+
+Route::post('/forums', 'ForumController@store');
+
+
+
+
