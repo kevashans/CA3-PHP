@@ -20,8 +20,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('blog.index');
-            // ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+        $topicId = request()->input('topicId');
+        return view('blog.index')
+            ->with('posts', Post::where('topics_id', $topicId)->orderBy('updated_at', 'DESC')->get());
     }
 
     /**
@@ -58,11 +59,12 @@ class PostsController extends Controller
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $newImageName,
             'user_id' => auth()->user()->id,
+            'topics_id'=>$request->input('topics_id')
             // 'post_id' => $request->input('post_id'),
             
         ]);
 
-        return redirect('/blog')
+        return redirect('/blog?topicId=' . $request->input('topics_id'))
             ->with('message', 'Your post has been added!');
     }
 
