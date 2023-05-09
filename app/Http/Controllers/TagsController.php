@@ -14,7 +14,8 @@ class TagsController extends Controller
      */
     public function index()
     {
-        return view('tags.index')->with('tags', Tag::orderBy('id', 'ASC')->get());
+        return view('tags.index')
+        ->with('tags', Tag::orderBy('id', 'ASC')->get());
     }
 
     /**
@@ -34,7 +35,7 @@ class TagsController extends Controller
         ]);
 
         return redirect('/tags')
-            ->with('message', 'Your tag has been added!');
+            ->with('message', 'Tag added!');
     }
 
     /**

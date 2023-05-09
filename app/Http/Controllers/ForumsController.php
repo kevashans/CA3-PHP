@@ -57,7 +57,7 @@ class ForumsController extends Controller{
             // 'topics_id'=>$request->input('topics_id')
             // 'post_id' => $request->input('post_id'),
             
-        ]);
+        ])->attachTags($request->input('tags'));
 
         return redirect('/forums')
             ->with('message', 'Forum created!');

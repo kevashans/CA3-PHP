@@ -36,6 +36,9 @@
             <h2 class="text-gray-700 font-bold text-5xl pb-4">
                 {{ $topic->topic_name }}
             </h2>
+            @foreach ( $topic->tags()->get() as $tag) 
+            <span></i>{{ $tag->name }}</span>
+        @endforeach
 
             {{-- <span class="text-gray-500">
                 By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
