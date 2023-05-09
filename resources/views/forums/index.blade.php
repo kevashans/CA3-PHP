@@ -48,9 +48,18 @@
             <a href="{{ route('blog.index', ['topicId' => $topic->id]) }}" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
                 Keep Reading
             </a>
-{{-- 
-            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-                <span class="float-right">
+
+            <a href="/tags" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+                add Tags
+            </a>
+
+          
+
+            @if (isset(Auth::user()->id) && Auth::user()->id == $topic->user_id)
+            {{-- <a class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+                add Tags
+            </a> --}}
+                {{-- <span class="float-right">
                     <a 
                         href="/blog/{{ $post->slug }}/edit"
                         class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
@@ -72,8 +81,8 @@
                         </button>
 
                     </form>
-                </span>
-            @endif --}}
+                </span> --}}
+            @endif
         </div>
     </div>    
 @endforeach

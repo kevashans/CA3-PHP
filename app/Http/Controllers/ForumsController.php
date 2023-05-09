@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Topics;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Spatie\Tags\HasTags;
+use Spatie\Tags\Tag;
 
 class ForumsController extends Controller{
     public function index()
@@ -20,7 +22,7 @@ class ForumsController extends Controller{
      */
     public function create()
     {
-        return view('forums.create');
+        return view('forums.create')->with('tags', Tag::orderBy('name', 'ASC')->get());;
     }
 
         /**
@@ -51,7 +53,7 @@ class ForumsController extends Controller{
             // 'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'members' => 0,
             'topic_image' => $newImageName,
-            'user_id' => auth()->user()->id,
+            // 'user_id' => auth()->user()->id,
             // 'topics_id'=>$request->input('topics_id')
             // 'post_id' => $request->input('post_id'),
             

@@ -19,6 +19,8 @@ class CreateTopicsTable extends Migration
             $table->longText('topic_description');
             $table->integer('members');
             $table->string('topic_image');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
