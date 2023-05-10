@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+<?php $topics_id = $_GET['topicId']; ?>
+
 @section('content')
 <div class="w-4/5 m-auto text-left">
     <div class="py-15">
@@ -45,6 +47,7 @@
             class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
             Submit Post
         </button>
+        <input type="hidden" name="topics_id" value="{{ $topics_id }}">
     </form>
 </div>
 

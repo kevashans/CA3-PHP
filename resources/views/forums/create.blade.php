@@ -44,6 +44,13 @@
             class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
             Create Forum
         </button>
+        @foreach ($tags as $tag)
+        <span class="m-3">
+            
+            <input class="rounded" type="checkbox" name="tags[]" value= {{ $tag->name }} id={{ $tag->name }}>
+            <label class="ml-2" for={{ $tag->name }}>{{ $tag->name }}</label>
+        </span>
+        @endforeach
     </form>
 </div>
 
