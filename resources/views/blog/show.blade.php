@@ -19,4 +19,23 @@
     </p>
 </div>
 
+<h4 class="text-lg font-bold">Display Comments</h4>
+
+@include('blog.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
+
+<hr class="my-4">
+
+<form method="post" action="{{ route('comment.store') }}" class="my-4">
+    @csrf
+    <div class="mb-4">
+        <label for="body" class="block text-gray-700 font-bold mb-2">Add comment</label>
+        <textarea class="form-textarea border rounded-lg px-3 py-2 w-full" name="body" rows="5"></textarea>
+        <input type="hidden" name="post_id" value="{{ $post->id }}" />
+    </div>
+    <div>
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Add Comment</button>
+    </div>
+</form>
+
+
 @endsection 

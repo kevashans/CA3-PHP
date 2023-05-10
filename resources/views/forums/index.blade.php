@@ -24,6 +24,9 @@
             class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
             Create Forum
         </a>
+        <a href="/tags" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+            add Tags
+        </a>
     </div>x
 @endif
 
@@ -52,9 +55,7 @@
                 Keep Reading
             </a>
 
-            <a href="/tags" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-                add Tags
-            </a>
+         
 
           
 

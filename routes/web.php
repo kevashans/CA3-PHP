@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ForumsController;
 use App\Http\Controllers\TagsController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::resource('/blog', PostsController::class);
 Route::resource('/forums', ForumsController::class);
 
 Route::resource('/tags', TagsController::class);
+
+Route::resource('/comment', CommentController::class);
+
 
 Auth::routes();
 

@@ -116,7 +116,7 @@ class PostsController extends Controller
                 
             ]);
 
-        return redirect('/blog')
+        return redirect('/blog?topicId=' . $request->input('topics_id'))
             ->with('message', 'Your post has been updated!');
     }
 
