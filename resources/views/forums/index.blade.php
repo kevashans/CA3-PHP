@@ -40,7 +40,11 @@
                 {{ $topic->topic_name }}
             </h2>
             @foreach ( $topic->tags()->get() as $tag) 
-            <span></i>{{ $tag->name }}</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-gray-800">
+                <i class="fas fa-tag mr-1"></i>
+                {{ $tag->name }}
+              </span>
+              
         @endforeach
 
             {{-- <span class="text-gray-500">
