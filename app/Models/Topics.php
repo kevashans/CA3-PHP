@@ -8,6 +8,6 @@ use Spatie\Tags\HasTags;
 
 class Topics extends Model
 {
-    use HasFactory,HasTags;
+    use HasFactory, HasTags;
     protected $fillable = ['topic_name', 'slug', 'topic_description', 'topic_image', 'members'];
 }

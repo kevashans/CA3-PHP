@@ -24,6 +24,9 @@ Route::resource('/blog', PostsController::class);
 
 Route::resource('/forums', ForumsController::class);
 
+Route::get('/search', [ForumsController::class, 'search'])->name('search');
+
+
 Route::resource('/tags', TagsController::class);
 
 Route::resource('/comment', CommentController::class);
