@@ -1,13 +1,48 @@
 @extends('layouts.app')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 @section('content')
-    <div class="w-4/5 m-auto text-center">
-        <div class="py-15 border-b border-gray-200">
-            <h1 class="text-6xl">
+<div class="background-image grid grid-cols-1 m-auto">
+    <div class="flex text-gray-100 pt-10">
+        <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
+            <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
                 Forums
             </h1>
+            <form action="{{ route('search') }}" method="GET" class="mt-7">
+                {{-- <div class="flex flex-wrap justify-center mb-4">
+                    <div class="relative mr-4">
+                        <input
+                            class="w-full px-3 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            type="text" name="search" placeholder="Search" required />
+                    </div>
+                    <button
+                        class="px-3 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                        type="submit">Search</button>
+                </div> --}}
+                <div class="relative flex flex-wrap justify-center mb-4">
+                    <input class="w-full px-3 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" name="search" placeholder="Search" required />
+                    <button class="absolute right-0 top-0 bottom-0 px-3 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                
+                <div class="flex flex-wrap justify-center">
+                    @foreach ($tags as $tag)
+                        <span class="m-1">
+                            <input type="checkbox" name="tags[]" value="{{ $tag->name }}" id="{{ $tag->name }}">
+                            <label class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md cursor-pointer hover:bg-gray-300"
+                                for="{{ $tag->name }}">{{ $tag->name }}</label>
+
+                        </span>
+                    @endforeach
+                </div>
+                
+            </form>
         </div>
     </div>
+</div>
 
     @if (session()->has('message'))
         <div class="w-4/5 m-auto mt-10 pl-2">
@@ -30,17 +65,17 @@
     </div>x
 @endif --}}
 
-    <form action="{{ route('search') }}" method="GET">
+    {{-- <form action="{{ route('search') }}" method="GET">
         <input type="text" name="search" required />
         <button type="submit">Search</button>
         @foreach ($tags as $tag)
         <span class="m-3">
-            
-            <input class="rounded" type="checkbox" name="tags[]" value= {{ $tag->name }} id={{ $tag->name }}>
-            <label class="ml-2" for={{ $tag->name }}>{{ $tag->name }}</label>
+            <input class="rounded border-gray-400 focus:ring-2 focus:ring-blue-400" type="checkbox" name="tags[]" value="{{ $tag->name }}" id="{{ $tag->name }}">
+            <label class="ml-2 text-gray-700" for="{{ $tag->name }}">{{ $tag->name }}</label>
         </span>
+        
         @endforeach
-    </form>
+    </form> --}}
 
     @if ($posts->isNotEmpty())
         @foreach ($posts as $topic)
@@ -55,7 +90,7 @@
                     @foreach ($topic->tags as $tag)
                         <span
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-gray-800">
-                            <i class="fas fa-tag mr-1"></i>
+                            <i class="fa fa-tag"></i>
                             {{ $tag->name }}
                         </span>
                     @endforeach
