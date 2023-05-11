@@ -71,23 +71,23 @@ class ForumsController extends Controller
         // Get the search value from the request
         $search = $request->input('search');
         $posts = null;
-       
+
 
         // Search in the title and body columns from the posts table
-        
+
 
         if (is_null($request->input('tags'))) {
             $posts = Topics::query()
-            ->where('topic_name', 'LIKE', "%{$search}%")
-            ->orWhere('topic_description', 'LIKE', "%{$search}%")
-            ->get();
+                ->where('topic_name', 'LIKE', "%{$search}%")
+                ->orWhere('topic_description', 'LIKE', "%{$search}%")
+                ->get();
         } else {
             $tags = implode(',', $request->input('tags'));
             $posts = Topics::query()
-            ->where('topic_name', 'LIKE', "%{$search}%")
-            ->orWhere('topic_description', 'LIKE', "%{$search}%")
-            ->whereHas('tags', Topics::withAnyTags([$tags]))
-            ->get();
+                ->where('topic_name', 'LIKE', "%{$search}%")
+                ->orWhere('topic_description', 'LIKE', "%{$search}%")
+                ->withAnyTags($tags)
+                ->get();
         }
 
         // Return the search view with the results compacted
