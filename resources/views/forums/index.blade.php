@@ -32,6 +32,14 @@
     <form action="{{ route('search') }}" method="GET">
         <input type="text" name="search" required />
         <button type="submit">Search</button>
+
+        @foreach ($tags as $tag)
+        <span class="m-3">
+            
+            <input class="rounded" type="checkbox" name="tags[]" value= {{ $tag->name }} id={{ $tag->name }}>
+            <label class="ml-2" for={{ $tag->name }}>{{ $tag->name }}</label>
+        </span>
+        @endforeach
     </form>
 
     @foreach ($topics as $topic)
