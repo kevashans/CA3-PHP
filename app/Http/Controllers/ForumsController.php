@@ -63,4 +63,19 @@ class ForumsController extends Controller{
             ->with('message', 'Forum created!');
     }
 
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+    
+        // Search in the title and body columns from the posts table
+        $posts = Topics::query()
+            ->where('topic_name', 'LIKE', "%{$search}%")
+            ->orWhere('topic_description', 'LIKE', "%{$search}%")
+            ->get();
+    
+        // Return the search view with the resluts compacted
+        return view('forums.search')
+            ->with('posts', $posts);
+    }
+
 }
