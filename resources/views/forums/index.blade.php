@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+  </details>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @section('content')
@@ -29,18 +31,29 @@
                         </button>
                     </div>
 
-                    <div class="flex flex-wrap justify-center">
-                        @foreach ($tags as $tag)
-                            <span class="m-1">
-                                <input type="checkbox" name="tags[]" value="{{ $tag->name }}" id="{{ $tag->name }}">
-                                <label
-                                    class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md cursor-pointer hover:bg-gray-300"
-                                    for="{{ $tag->name }}">{{ $tag->name }}</label>
-
-                            </span>
-                        @endforeach
-                    </div>
-
+                    <details class="bg-transparent shadow rounded group mb-4">
+                        <summary class="list-none flex flex-wrap items-center cursor-pointer
+                        focus-visible:outline-none focus-visible:ring focus-visible:ring-pink-500
+                        rounded group-open:rounded-b-none group-open:z-[1] relative
+                        ">
+                          <h3 class="flex flex-1 p-4 font-semibold justify-center ">Tags</h3>
+                          <div class="flex w-10 items-center justify-center">
+                            <div class="border-8 border-transparent border-l-gray-600 ml-2
+                            group-open:rotate-90 transition-transform origin-left
+                            "></div>
+                          </div>
+                        </summary>
+                        <div class="flex flex-wrap justify-center">
+                            @foreach ($tags as $tag)
+                                <span class="m-1">
+                                    <input type="checkbox" name="tags[]" value="{{ $tag->name }}" id="{{ $tag->name }}">
+                                    <label
+                                        class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md cursor-pointer hover:bg-gray-300"
+                                        for="{{ $tag->name }}"><i class="fa fa-tag"></i>{{ $tag->name }}</label>
+                                </span>
+                            @endforeach
+                        </div>
+                    </details>
 
                     @if (Auth::check())
                         <div class="pt-15 w-4/5 m-auto">
@@ -49,7 +62,7 @@
                                 Create Forum
                             </a>
                             <a href="/tags"
-                                class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+                                class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl ml-5">
                                 add Tags
                             </a>
                         </div>
