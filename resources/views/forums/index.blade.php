@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-  </details>
+</details>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @section('content')
@@ -32,21 +32,25 @@
                     </div>
 
                     <details class="bg-transparent shadow rounded group mb-4">
-                        <summary class="list-none flex flex-wrap items-center cursor-pointer
+                        <summary
+                            class="list-none flex flex-wrap items-center cursor-pointer
                         focus-visible:outline-none focus-visible:ring focus-visible:ring-pink-500
                         rounded group-open:rounded-b-none group-open:z-[1] relative
                         ">
-                          <h3 class="flex flex-1 p-4 font-semibold justify-center ">Tags</h3>
-                          <div class="flex w-10 items-center justify-center">
-                            <div class="border-8 border-transparent border-l-gray-600 ml-2
+                            <h3 class="flex flex-1 p-4 font-semibold justify-center ">Tags</h3>
+                            <div class="flex w-10 items-center justify-center">
+                                <div
+                                    class="border-8 border-transparent border-l-gray-600 ml-2
                             group-open:rotate-90 transition-transform origin-left
-                            "></div>
-                          </div>
+                            ">
+                                </div>
+                            </div>
                         </summary>
                         <div class="flex flex-wrap justify-center">
                             @foreach ($tags as $tag)
                                 <span class="m-1">
-                                    <input type="checkbox" name="tags[]" value="{{ $tag->name }}" id="{{ $tag->name }}">
+                                    <input type="checkbox" name="tags[]" value="{{ $tag->name }}"
+                                        id="{{ $tag->name }}">
                                     <label
                                         class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md cursor-pointer hover:bg-gray-300"
                                         for="{{ $tag->name }}"><i class="fa fa-tag"></i>{{ $tag->name }}</label>
@@ -140,11 +144,31 @@
                     {{ $topic->topic_description }}
                 </p>
 
-                <a href="{{ route('blog.index', ['topicId' => $topic->id]) }}"
-                    class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-                    Keep Reading
-                </a>
+                <div class="flex justify-start gap-0 items-center">
+                    <a href="{{ route('blog.index', ['topicId' => $topic->id]) }}"
+                        class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+                        Explore
+                    </a>
 
+                    @if (Auth::check())
+                     
+                        @if (!\App\Models\Following::where('user_id', Auth::user()->id)->where('topic_id', $topic->id)->exists())
+                            <form method="post" action="{{ route('following.store') }}" class="flex items-center">
+                                @csrf
+                                <input type="hidden" name="topic_id" value="{{ $topic->id }}" />
+                                <button type="submit"
+                                    class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl mt-4 ml-4">Follow</button>
+                            </form>
+                        @else
+                        <form method="post" action="{{ route('following.delete') }}" class="flex items-center">
+                            @csrf
+                            <input type="hidden" name="topic_id" value="{{ $topic->id }}" />
+                            <button
+                                class="uppercase bg-gray-400 ml-5 text-black-100 text-lg font-extrabold py-4 px-8 rounded-3xl mt-4">Unfollow</button>
+                        </form>
+                        @endif
+                    @endif
+                </div>
 
 
 

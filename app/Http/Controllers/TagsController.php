@@ -79,7 +79,7 @@ class TagsController extends Controller
         $tag->save();
 
         return redirect('/tags')
-            ->with('message', 'Your tag has been updated!');
+            ->with('message', 'Tag updated!');
     }
 
     /**
@@ -94,6 +94,6 @@ class TagsController extends Controller
         $tag->delete();
 
         return redirect('/tags')
-            ->with('message', 'Your tag has been deleted!');
+            ->with('message', 'Tag deleted!');
     }
 }
