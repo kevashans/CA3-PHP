@@ -36,7 +36,7 @@ Route::resource('/following', FollowingController::class);
 
 Route::post('/following/delete', [FollowingController::class, 'delete'])->name('following.delete');
 
-Route::post('/followed', [FollowingController::class, 'followedForums'])->name('following.followedForums');
+Route::get('/followed', [FollowingController::class, 'followedForums'])->name('following.followedForums');
 
 
 
