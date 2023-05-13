@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentsTable extends Migration
+class CreateFollowingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id('id');
+        Schema::create('followings', function (Blueprint $table) {
+            $table->id();
             $table->integer('user_id')->unsigned();
-            $table->integer('post_id')->unsigned();
-            $table->integer('parent_id')->unsigned()->nullable();
-            $table->text('body');
+            $table->integer('topic_id')->unsigned();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -31,6 +28,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('followings');
     }
 }

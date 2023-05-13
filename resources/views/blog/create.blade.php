@@ -1,3 +1,6 @@
+<?php
+    $topics_id = $_GET['topicId']; ?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -50,6 +53,8 @@
                     class="hidden">
             </label>
         </div>
+        <input type="hidden" name="topics_id" value="{{ $topics_id }}">
+
 
         <button    
             type="submit"
