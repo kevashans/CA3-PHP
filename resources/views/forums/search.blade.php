@@ -4,14 +4,14 @@
 
 
 @section('content')
-<div class="background-image grid grid-cols-1 m-auto">
-    <div class="flex text-gray-100 pt-10">
-        <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
-            <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
-                Forums
-            </h1>
-            <form action="{{ route('search') }}" method="GET" class="mt-7">
-                {{-- <div class="flex flex-wrap justify-center mb-4">
+    <div class="background-image grid grid-cols-1 m-auto">
+        <div class="flex text-gray-100 pt-10">
+            <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
+                <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
+                    Forums
+                </h1>
+                <form action="{{ route('search') }}" method="GET" class="mt-7">
+                    {{-- <div class="flex flex-wrap justify-center mb-4">
                     <div class="relative mr-4">
                         <input
                             class="w-full px-3 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -21,28 +21,57 @@
                         class="px-3 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
                         type="submit">Search</button>
                 </div> --}}
-                <div class="relative flex flex-wrap justify-center mb-4">
-                    <input class="w-full px-3 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" name="search" placeholder="Search" required />
-                    <button class="absolute right-0 top-0 bottom-0 px-3 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-                
-                <div class="flex flex-wrap justify-center">
-                    @foreach ($tags as $tag)
-                        <span class="m-1">
-                            <input type="checkbox" name="tags[]" value="{{ $tag->name }}" id="{{ $tag->name }}">
-                            <label class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md cursor-pointer hover:bg-gray-300"
-                                for="{{ $tag->name }}">{{ $tag->name }}</label>
+                    <div class="relative flex flex-wrap justify-center mb-4">
+                        <input
+                            class="w-full px-3 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            type="text" name="search" placeholder="Search" required />
+                        <button
+                            class="absolute right-0 top-0 bottom-0 px-3 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
 
-                        </span>
-                    @endforeach
-                </div>
-                
-            </form>
+                    <details class="bg-transparent shadow rounded group mb-4">
+                        <summary class="list-none flex flex-wrap items-center cursor-pointer
+                        focus-visible:outline-none focus-visible:ring focus-visible:ring-pink-500
+                        rounded group-open:rounded-b-none group-open:z-[1] relative
+                        ">
+                          <h3 class="flex flex-1 p-4 font-semibold justify-center">Tags</h3>
+                          <div class="flex w-10 items-center justify-center">
+                            <div class="border-8 border-transparent border-l-gray-600 ml-2
+                            group-open:rotate-90 transition-transform origin-left
+                            "></div>
+                          </div>
+                        </summary>
+                        <div class="flex flex-wrap justify-center">
+                            @foreach ($tags as $tag)
+                                <span class="m-1">
+                                    <input type="checkbox" name="tags[]" value="{{ $tag->name }}" id="{{ $tag->name }}">
+                                    <label
+                                        class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md cursor-pointer hover:bg-gray-300"
+                                        for="{{ $tag->name }}"><i class="fa fa-tag"></i>{{ $tag->name }}</label>
+                                </span>
+                            @endforeach
+                        </div>
+                    </details>
+
+                    @if (Auth::check())
+                        <div class="pt-15 w-4/5 m-auto">
+                            <a href="/forums/create"
+                                class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                                Create Forum
+                            </a>
+                            <a href="/tags"
+                                class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl ml-5">
+                                add Tags
+                            </a>
+                        </div>
+                    @endif
+
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
     @if (session()->has('message'))
         <div class="w-4/5 m-auto mt-10 pl-2">

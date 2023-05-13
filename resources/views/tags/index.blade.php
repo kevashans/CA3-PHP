@@ -5,7 +5,7 @@
 <article class="container mx-auto">
     <header class="py-8 border-b border-gray-300 text-center">
       <h1 class="text-4xl font-bold">
-        <span class="border-b-4 border-blue-500 pb-2">Manage Tags</span>
+        <span class="border-b-4 border-green-500 pb-2">Manage Tags</span>
       </h1>
     </header>
     <section class="mx-20 my-12">

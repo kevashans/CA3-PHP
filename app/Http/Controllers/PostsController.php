@@ -126,12 +126,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($slug)
+    public function destroy($slug,Request $request)
     {
         $post = Post::where('slug', $slug);
         $post->delete();
 
-        return redirect('/blog')
+        return redirect('/blog?topicId=' . $request->input('topics_id'))
             ->with('message', 'Your post has been deleted!');
     }
 }
