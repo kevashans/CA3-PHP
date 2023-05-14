@@ -96,7 +96,9 @@
             <nav class="header__menu">
                 <a href="/">Home</a>
                 <a href="/forums">Forums</a>
+                @if (Auth::check())
                 <a href="/followed">Followed</a>
+                @endif
                 @guest
                     <a href="{{ route('login') }}">{{ __('Login') }}</a>
                     @if (Route::has('register'))
