@@ -51,23 +51,35 @@ Do not hesitate to contribute to the project by adapting or adding features ! Bu
 ## Features
 Our website provides the following functionality:
 
+*Accounts
+- User Account Registration
+- Users can log in and log out
+
 *Forums (a collection of posts, allows better categorization)
-- User can create forums
-- User can search forums
-- User can filter forums by tags
-- User can view forums
+- Users can create forums
+- Users can search forums
+- Users can filter forums by tags
+- Users can view forums
+- Users can favorite/follow forums
+- Guests can search forums
+- Guests can filter forums by tags
+- Guests can view forums
 
 * Tags
 - Forums can be assigned by tags
-- User can create Tags
+- Users can create Tags
 
-* Posts
-- Within forums users can create posts
+* Posts (within Forums)
+- Users can create posts
 - Users can edit posts
 - Users can view posts
 - Users can search posts
+- Guests can view posts
+- Guests can search posts
 
-* Comments
-- Within posts users can comment
-- users can reply to other comments
+* Comments (within Posts)
+- Users can view comments
+- Users can comment
+- Users can reply to other comments
+- Guests can view comments
 
