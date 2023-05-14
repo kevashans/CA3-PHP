@@ -52,12 +52,22 @@ Do not hesitate to contribute to the project by adapting or adding features ! Bu
 Our website provides the following functionality:
 
 *Forums (a collection of posts, allows better categorization)
-<img width="1134" alt="image" src="https://github.com/kevashans/CA3-PHP/assets/93915338/ee7835f2-0744-4bd8-9542-2b39a8b06a65">
-* Tags
-<img width="1265" alt="image" src="https://github.com/kevashans/CA3-PHP/assets/93915338/544c2b75-70d1-41f3-8f68-158a662065c4">
+- User can create forums
+- User can search forums
+- User can filter forums by tags
+- User can view forums
 
-* Filter
-<img width="1138" alt="image" src="https://github.com/kevashans/CA3-PHP/assets/93915338/1e671b54-fc8f-4fc0-89c3-6b86ba2d5985">
+* Tags
+- Forums can be assigned by tags
+- User can create Tags
+
+* Posts
+- Within forums users can create posts
+- Users can edit posts
+- Users can view posts
+- Users can search posts
 
 * Comments
-<img width="1257" alt="image" src="https://github.com/kevashans/CA3-PHP/assets/93915338/82b64329-8e5a-4165-be2c-53fbad2e538e">
+- Within posts users can comment
+- users can reply to other comments
+
