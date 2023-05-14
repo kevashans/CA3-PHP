@@ -34,7 +34,7 @@ $topics_id = $_GET['topicId'];
 
 
 @foreach ($posts as $post)
-<div class="background-image sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
+<div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
     <div>
         <img src="{{ asset('images/' . $post->image_path) }}" alt="" class="rounded-full">
     </div>
@@ -52,31 +52,31 @@ $topics_id = $_GET['topicId'];
             {{ $post->description }}
         </p>
 
-        <a href="/blog/{{ $post->slug }}" class="read-more-btn">
-            Keep Reading
+        <div class="flex justify-between">
+    <a href="/blog/{{ $post->slug }}" class="colored_button uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+        Keep Reading
+    </a>
+
+    @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+    <div class="flex">
+        <a href="/blog/{{ $post->slug }}/edit?topicId={{ $topics_id }}" class="colored_button uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+            Edit
         </a>
 
-        @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-        <span class="float-right">
-            <a href="/blog/{{ $post->slug }}/edit?topicId={{ $topics_id }}" class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
-                Edit
-            </a>
-        </span>
+        <form action="/blog/{{ $post->slug }}" method="POST">
+            @csrf
+            @method('delete')
+            <input type="hidden" name="topics_id" value="{{ $topics_id }}">
+            <button class="bg-red-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl ml-2" type="submit">
+                Delete
+            </button>
+        </form>
+    </div>
+    @endif
+</div>
 
-        <span class="float-right">
-            <form action="/blog/{{ $post->slug }}" method="POST">
-                @csrf
-                @method('delete')
-                <input type="hidden" name="topics_id" value="{{ $topics_id }}">
-
-                <button class="text-red-500 pr-3" type="submit">
-                    Delete
-                </button>
-
-            </form>
-        </span>
-        @endif
     </div>
 </div>
 @endforeach
+
 @endsection

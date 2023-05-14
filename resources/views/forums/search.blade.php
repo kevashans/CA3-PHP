@@ -31,7 +31,7 @@
                         </button>
                     </div>
 
-                    <details class="bg-transparent shadow rounded group mb-4">
+                    <details class="colored_button_lite bg-transparent shadow rounded group mb-4">
                         <summary class="list-none flex flex-wrap items-center cursor-pointer
                         focus-visible:outline-none focus-visible:ring focus-visible:ring-pink-500
                         rounded group-open:rounded-b-none group-open:z-[1] relative
@@ -57,12 +57,12 @@
 
                     @if (Auth::check())
                         <div class="pt-15 w-4/5 m-auto">
-                            <a href="/forums/create"
-                                class="colored_button uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                        <a href="/forums/create"
+                                class="colored_button_lite uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
                                 Create Forum
                             </a>
                             <a href="/tags"
-                                class="colored_button uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl ml-5">
+                                class="colored_button_lite uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl ml-5">
                                 add Tags
                             </a>
                         </div>
@@ -83,14 +83,14 @@
 
     {{-- @if (Auth::check())
     <div class="pt-15 w-4/5 m-auto">
-        <a 
-            href="/forums/create"
-            class="colored_button uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
-            Create Forum
-        </a>
-        <a href="/tags" class="uppercase colored_button text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-            add Tags
-        </a>
+                            <a href="/forums/create"
+                                class="colored_button_lite uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                                Create Forum
+                            </a>
+                            <a href="/tags"
+                                class="colored_button_lite uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl ml-5">
+                                add Tags
+                            </a>
     </div>x
 @endif --}}
 
