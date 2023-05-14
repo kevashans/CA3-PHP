@@ -1,0 +1,103 @@
+.background-image {
+    background-image: url('/path/to/background-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .forum-heading {
+    margin-top: 50px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+  }
+  
+  .forum-heading h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+  
+  .search-form {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .search-form input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #000;
+    font-size: 1.2rem;
+    margin-right: 20px;
+  }
+  
+  .search-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #000;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .tags-section {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .tags-section h3 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .tags-section label {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: #333;
+    background-color: #f7f7f7;
+    cursor: pointer;
+  }
+  
+  .tags-section label:hover,
+  .tags-section label:focus {
+    background-color: #eee;
+  }
+  
+  .create-forum-button {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .create-forum-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #000;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .add-tags-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #000;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+  }
+  
