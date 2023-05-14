@@ -1,4 +1,8 @@
 ## Laravel 8 Complete Blog
+## Wise Kevas Forums
+<img width="1134" alt="image" src="https://cdn.discordapp.com/emojis/1073643496814166056.webp?size=96&quality=lossless">
+
+Join the conversation with Wise Kevas - the ultimate forum platform for creating and exploring topics that matter. Connect with like-minded individuals, share your ideas and perspectives, and gain valuable insights from diverse communities. With user-friendly features and customizable options, Wise Kevas makes it easy to start, manage, and participate in discussions that inspire you. Sign up today and join the community of curious and passionate minds!
 
 This repository is linked to [this youtube video](https://www.youtube.com/watch?v=HKJDLXsTr8A&t=4710s) where I show you how to create a complete blog in Laravel 8 using best practices.
 
