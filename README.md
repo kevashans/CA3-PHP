@@ -21,6 +21,11 @@ composer install
 php artisan key:generate
 php artisan cache:clear && php artisan config:clear
 php artisan serve
+
+To load sample database data:
+Open XAMPP and run Apache and MySQL
+Run PHPmyAdmin on Localhost
+Import data from laravelblog.sql
 ```
 
 # Before starting <br>
