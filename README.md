@@ -1,6 +1,6 @@
 ## Laravel 8 Complete Blog
-## Wise Kevas Forums
-<img width="1134" alt="image" src="https://cdn.discordapp.com/emojis/1073643496814166056.webp?size=96&quality=lossless">
+## Wise Kevas
+<img alt="image" src="https://cdn.discordapp.com/emojis/1073643496814166056.webp?size=96&quality=lossless">
 
 Join the conversation with Wise Kevas - the ultimate forum platform for creating and exploring topics that matter. Connect with like-minded individuals, share your ideas and perspectives, and gain valuable insights from diverse communities. With user-friendly features and customizable options, Wise Kevas makes it easy to start, manage, and participate in discussions that inspire you. Sign up today and join the community of curious and passionate minds!
 
