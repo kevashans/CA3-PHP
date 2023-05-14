@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('r/Wise Kevas', 'r/Wise Kevas') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -78,7 +78,7 @@
 <body>
     <div id="app">
         <header class="header">
-            <a href="/" class="header__logo">{{ config('app.name', 'Laravel') }}</a>
+            <a href="/" class="header__logo">{{ config('r/Wise Kevas', 'r/Wise Kevas') }}</a>
             <nav class="header__menu">
                 <a href="/">Home</a>
                 <a href="/forums">Forums</a>
