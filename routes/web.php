@@ -44,11 +44,11 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/forum', 'ForumController@index');
+// Route::get('/forum', 'ForumsController@index');
 
-Route::get('/forums/create', 'ForumController@create');
+// Route::get('/forums/create', 'ForumsController@create');
 
-Route::post('/forums', 'ForumController@store');
+// Route::post('/forums', 'ForumController@store');
 
 
 
