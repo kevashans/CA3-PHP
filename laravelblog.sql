@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2023 at 08:45 PM
+-- Generation Time: May 14, 2023 at 09:15 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -45,7 +45,16 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`id`, `user_id`, `post_id`, `parent_id`, `body`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, 1, NULL, 'fuck you bitch!', '2023-05-14 12:51:39', '2023-05-14 12:51:39', NULL),
 (2, 1, 1, 1, 'no Fuck you', '2023-05-14 13:24:13', '2023-05-14 13:24:13', NULL),
-(3, 1, 4, NULL, 'I like Minecraft :D', '2023-05-14 17:38:05', '2023-05-14 17:38:05', NULL);
+(3, 1, 4, NULL, 'I like Minecraft :D', '2023-05-14 17:38:05', '2023-05-14 17:38:05', NULL),
+(4, 2, 5, NULL, 'A classic...\r\n\r\nI always hated the Errol race tho...', '2023-05-14 18:05:29', '2023-05-14 18:05:29', NULL),
+(5, 2, 8, NULL, 'Science is Cool :D', '2023-05-14 18:08:15', '2023-05-14 18:08:15', NULL),
+(6, 2, 6, NULL, '// This is a comment', '2023-05-14 18:08:57', '2023-05-14 18:08:57', NULL),
+(7, 2, 6, 6, '<!-- this is also a comment -->', '2023-05-14 18:09:11', '2023-05-14 18:09:11', NULL),
+(8, 2, 6, 7, '/* This is also a comment */', '2023-05-14 18:09:27', '2023-05-14 18:09:27', NULL),
+(9, 2, 6, 8, '# Yet another comment :)', '2023-05-14 18:09:48', '2023-05-14 18:09:48', NULL),
+(10, 2, 6, NULL, 'Assignment due @11:59pm be like', '2023-05-14 18:10:20', '2023-05-14 18:10:20', NULL),
+(11, 2, 9, NULL, 'Nice!', '2023-05-14 18:13:23', '2023-05-14 18:13:23', NULL),
+(12, 2, 4, NULL, 'Minecraft sucks XDDDDD', '2023-05-14 18:14:02', '2023-05-14 18:14:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -148,7 +157,9 @@ INSERT INTO `posts` (`id`, `topics_id`, `slug`, `title`, `description`, `image_p
 (4, 5, 'minecraft', 'Minecraft', 'Minecraft is so much fun :D \r\nwhat do you guys think?', '64612a79aa4ef-Minecraft.jpg', '2023-05-14 17:37:45', '2023-05-14 17:37:45', 1),
 (5, 5, 'jak-2', 'Jak 2', 'One of my greatest childhood games...\r\nI used to spend countless hours running around Haven City performing trick\'s on Jak\'s Jetboard, or getting into trouble with the Krimzon Guards... This game brings back so many memories... but damn the difficulty was intense!', '64612ae34f107-Jak 2.jpg', '2023-05-14 17:39:31', '2023-05-14 17:39:31', 1),
 (6, 8, 'real-dev-hours', 'Real Dev Hours', 'Sleep is for the weak...', '64612b4d97dca-Real Dev Hours.png', '2023-05-14 17:41:17', '2023-05-14 17:41:17', 1),
-(7, 8, 'quantum-computing', 'Quantum Computing', 'The new age of computing is upon us...', '64612bc8a59a5-Quantum Computing.png', '2023-05-14 17:43:20', '2023-05-14 17:43:20', 1);
+(7, 8, 'quantum-computing', 'Quantum Computing', 'The new age of computing is upon us...', '64612bc8a59a5-Quantum Computing.png', '2023-05-14 17:43:20', '2023-05-14 17:43:20', 1),
+(8, 7, 'ai-generates-mrna-in-just-11-minutes', 'AI generates mRNA in just 11 minutes', 'A new algorithm developed by Chinese company Baidu Research is dramatically faster than prior methods and shown to boost the antibody response of mRNA vaccines by up to 128 times.', '6461319158063-AI generates mRNA in just 11 minutes.jpg', '2023-05-14 18:08:01', '2023-05-14 18:08:01', 2),
+(9, 4, 'timetable-update', 'Timetable Update', 'Here is our new timetable guys...', '646132ae26093-Timetable Update.png', '2023-05-14 18:12:46', '2023-05-14 18:12:46', 2);
 
 -- --------------------------------------------------------
 
@@ -249,7 +260,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Matthew', 'matthew@gmail.com', NULL, '$2y$10$fcCy2XVybPIfJXa4zBnEZOJ2Q1Gs5MPxggy5Lkno4sfwIyfu.TcXe', NULL, '2023-05-14 00:37:30', '2023-05-14 00:37:30');
+(1, 'Matthew', 'matthew@gmail.com', NULL, '$2y$10$fcCy2XVybPIfJXa4zBnEZOJ2Q1Gs5MPxggy5Lkno4sfwIyfu.TcXe', NULL, '2023-05-14 00:37:30', '2023-05-14 00:37:30'),
+(2, 'NegativeGamer69', 'gaming@gmail.com', NULL, '$2y$10$fLv/KxGn4JHz0nVpbxvFmOcD0XHnejWdMCM5ZFCyQtF8lHqmGXfPa', NULL, '2023-05-14 18:04:40', '2023-05-14 18:04:40');
 
 --
 -- Indexes for dumped tables
@@ -328,7 +340,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -352,7 +364,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tags`
@@ -370,7 +382,7 @@ ALTER TABLE `topics`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
