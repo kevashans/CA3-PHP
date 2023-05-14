@@ -157,45 +157,15 @@
             </div>
         @endforeach
     @else
-        <div>
-            <h2>No posts found</h2>
-        </div>
+
+                <div class="pt-15 w-4/5 m-auto text-center">
+                        <h2
+                        class="bg-red-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                                No Posts Found!
+                        </h2>
+                </div>
     @endif
 
-
-
-
-
-
-
-    @if (isset(Auth::user()->id) && Auth::user()->id == $topic->user_id)
-        {{-- <a class="uppercase colored_button text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-                add Tags
-            </a> --}}
-        {{-- <span class="float-right">
-                    <a 
-                        href="/blog/{{ $post->slug }}/edit"
-                        class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
-                        Edit
-                    </a>
-                </span>
-
-                <span class="float-right">
-                     <form 
-                        action="/blog/{{ $post->slug }}"
-                        method="POST">
-                        @csrf
-                        @method('delete')
-
-                        <button
-                            class="text-red-500 pr-3"
-                            type="submit">
-                            Delete
-                        </button>
-
-                    </form>
-                </span> --}}
-    @endif
     </div>
     </div>
     
