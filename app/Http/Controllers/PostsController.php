@@ -8,7 +8,7 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
 {
- 
+
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
@@ -59,9 +59,9 @@ class PostsController extends Controller
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $newImageName,
             'user_id' => auth()->user()->id,
-            'topics_id'=>$request->input('topics_id')
+            'topics_id' => $request->input('topics_id')
             // 'post_id' => $request->input('post_id'),
-            
+
         ]);
 
         return redirect('/blog?topicId=' . $request->input('topics_id'))
@@ -76,7 +76,7 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-       
+
         return view('blog.show')
             ->with('post', Post::where('slug', $slug)->first());
     }
@@ -113,7 +113,7 @@ class PostsController extends Controller
                 'description' => $request->input('description'),
                 'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
                 'user_id' => auth()->user()->id
-                
+
             ]);
 
         return redirect('/blog?topicId=' . $request->input('topics_id'))
@@ -126,7 +126,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($slug,Request $request)
+    public function destroy($slug, Request $request)
     {
         $post = Post::where('slug', $slug);
         $post->delete();
@@ -134,26 +134,28 @@ class PostsController extends Controller
         return redirect('/blog?topicId=' . $request->input('topics_id'))
             ->with('message', 'Your post has been deleted!');
     }
-    
+
     public function search(Request $request)
     {
         // Get the search value from the request
         $search = $request->input('search');
+        $topic_id = $request->input('topic_id');
         $posts = null;
 
 
         // Search in the title and body columns from the posts table
+        $posts = Post::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->where('topics_id', $topic_id)
+            // ->orWhere('description', 'LIKE', "%{$search}%")
+            ->get();
 
-
-        if (is_null($request->input('tags'))) {
-            $posts = Topics::query()
-                ->where('title', 'LIKE', "%{$search}%")
-                ->orWhere('description', 'LIKE', "%{$search}%")
-                ->get();
-        } 
+        return view('blog.search')
+            ->with('posts', $posts)
+            ->with('topic_id',$topic_id);
+          
 
     }
-    
+
 
 }
-

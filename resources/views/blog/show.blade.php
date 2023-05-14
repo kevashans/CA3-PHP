@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@if(isset($post))
+
 <div class="w-4/5 mx-auto text-center">
     <div class="py-8">
         <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
@@ -72,7 +74,7 @@
         </form>
     </div>
   </details>
-
+@endif
 
 @endsection 
 
