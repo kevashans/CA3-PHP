@@ -4,11 +4,8 @@
 
 Join the conversation with Wise Kevas - the ultimate forum platform for creating and exploring topics that matter. Connect with like-minded individuals, share your ideas and perspectives, and gain valuable insights from diverse communities. With user-friendly features and customizable options, Wise Kevas makes it easy to start, manage, and participate in discussions that inspire you. Sign up today and join the community of curious and passionate minds!
 
-This repository is linked to [this youtube video](https://www.youtube.com/watch?v=HKJDLXsTr8A&t=4710s) where I show you how to create a complete blog in Laravel 8 using best practices.
 
-•	Author: Code With Dary <br>
-•	Twitter: [@codewithdary](https://twitter.com/codewithdary) <br>
-•	Instagram: [@codewithdary](https://www.instagram.com/codewithdary/) <br>
+•	Author: Kevas Hans & Matthew Riddell SD2B<br>
 
 ## Requirements
 •	PHP 7.3 or higher <br>
@@ -17,8 +14,8 @@ This repository is linked to [this youtube video](https://www.youtube.com/watch?
 ## Usage <br>
 Setting up your development environment on your local machine: <br>
 ```
-git clone git@github.com:codewithdary/laravel-8-complete-blog.git
-cd laravel-8-complete-blog
+git clone git@https://github.com/kevashans/CA3-PHP.git
+cd CA3-PHP
 cp .env.example .env
 composer install
 php artisan key:generate
