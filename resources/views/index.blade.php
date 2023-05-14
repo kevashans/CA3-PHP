@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    img, a, button {
+        border-radius: 10px;
+    }
+</style>
+
     <div class="background-image grid grid-cols-1 m-auto">
         <div class="flex text-gray-100 pt-10">
             <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
@@ -32,7 +38,7 @@
 
             <a 
                 href="/register"
-                class="uppercase bg-blue-500 text-gray-100 text-s font-extrabold py-3 px-8 rounded-3xl">
+                class="uppercase colored_button text-gray-100 text-s font-extrabold py-3 px-8 rounded-3xl">
                 Register
             </a>
         </div>

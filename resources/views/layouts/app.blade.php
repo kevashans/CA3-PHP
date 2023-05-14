@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('r/Wise Kevas', 'r/Wise Kevas') }}</title>
+    <title>{{ config('Wise Kevas', 'Wise Kevas') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,67 +18,86 @@
 
     <style>
         body {
-            background-color: #F2F2F2;
-            font-family: Arial, sans-serif;
-        }
+    background-color: #F2F2F2;
+    font-family: Arial, sans-serif;
+}
 
-        #app {
-            max-width: 1024px;
-            margin: 0 auto;
-            background-color: #FFFFFF;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-        }
+#app {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
 
-        .header {
-            background-color: #425c5a;
-            color: #FFFFFF;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.header {
+    background-color: #003C46;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
 
-        .header__logo {
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: none;
-        }
+.header__logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        .header__menu {
-            display: flex;
-            gap: 20px;
-        }
+.header__menu {
+    display: flex;
+    gap: 20px;
+}
 
-        .header__menu a {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.2s ease-in-out;
-        }
+.header__menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+}
 
-        .header__menu a:hover {
-            color: #9BA2A3;
-        }
+.header__menu a:hover {
+    color: #9BA2A3;
+}
 
-        .content {
-            padding: 20px;
-        }
+.content {
+    padding: 20px;
+}
 
-        .footer {
-            background-color: #425c5a;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 10px;
-        }
+.footer {
+    background-color: #003C46;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* Additional styles */
+.header__menu a.active {
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.content img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.colored_button {
+    background-color: #003C46; 
+}
+
     </style>
 </head>
-<body>
+<body >
     <div id="app">
         <header class="header">
-            <a href="/" class="header__logo">{{ config('r/Wise Kevas', 'r/Wise Kevas') }}</a>
+            <a href="/" class="header__logo">{{ config('Wise Kevas', 'Wise Kevas') }}</a>
             <nav class="header__menu">
                 <a href="/">Home</a>
                 <a href="/forums">Forums</a>
