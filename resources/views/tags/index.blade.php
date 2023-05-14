@@ -14,13 +14,13 @@
         <div class="mb-6">
           <label for="name" class="block text-gray-700 font-bold mb-2">Tag Name</label>
           <input id="name" name="name" type="text" class="border rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-green-500">
+          <button type="submit" class="px-4 py-2 rounded-lg colored_button text-white font-bold uppercase tracking-wide hover:colored_button">Add Tag</button>
         </div>
-        <button type="submit" class="px-4 py-2 rounded-lg bg-green-500 text-white font-bold uppercase tracking-wide hover:bg-green-600">Add Tag</button>
-      </form>
+        </form>
     </section>
     @if (session()->has('message'))
     <div class="w-4/5 mt-2 pl-2">
-      <p class="w-3/5 mb-4 text-gray-50 bg-green-500 rounded-2xl py-4 text-center">
+      <p class="w-3/5 mb-4 text-gray-50 colored_button rounded-2xl py-4 text-center">
         {{ session('message') }}
       </p>
     </div>

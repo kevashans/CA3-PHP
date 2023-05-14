@@ -18,7 +18,7 @@
                             type="text" name="search" placeholder="Search" required />
                     </div>
                     <button
-                        class="px-3 py-2 text-white colored_button rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                        class="px-3 py-2 text-white colored_button_lite rounded-md hover:colored_button_lite focus:outline-none focus:colored_button_lite"
                         type="submit">Search</button>
                 </div> --}}
                     <div class="relative flex flex-wrap justify-center mb-4">
@@ -26,14 +26,14 @@
                             class="w-full px-3 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                             type="text" name="search" placeholder="Search" required />
                         <button
-                            class="absolute right-0 top-0 bottom-0 px-3 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                            class="absolute right-0 top-0 bottom-0 px-3 py-2 text-white colored_button_lite rounded-md hover:colored_button_lite focus:outline-none focus:colored_button_lite">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
 
                     <details class="bg-transparent shadow rounded group mb-4">
                         <summary
-                            class="list-none flex flex-wrap items-center cursor-pointer
+                            class="colored_button_lite list-none flex flex-wrap items-center cursor-pointer
                         focus-visible:outline-none focus-visible:ring focus-visible:ring-pink-500
                         rounded group-open:rounded-b-none group-open:z-[1] relative
                         ">
@@ -62,11 +62,11 @@
                     @if (Auth::check())
                         <div class="pt-15 w-4/5 m-auto">
                             <a href="/forums/create"
-                                class="colored_button uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                                class="colored_button_lite uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
                                 Create Forum
                             </a>
                             <a href="/tags"
-                                class="colored_button uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl ml-5">
+                                class="colored_button_lite uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl ml-5">
                                 add Tags
                             </a>
                         </div>
@@ -90,7 +90,7 @@
                             type="text" name="search" placeholder="Search" required />
                     </div>
                     <button
-                        class="px-3 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                        class="px-3 py-2 text-white colored_button_lite rounded-md hover:colored_button_lite focus:outline-none focus:colored_button_lite"
                         type="submit">Search</button>
                 </div>
                 <div class="flex flex-wrap justify-center">
@@ -146,7 +146,7 @@
 
                 <div class="flex justify-start gap-0 items-center">
                     <a href="{{ route('blog.index', ['topicId' => $topic->id]) }}"
-                        class="uppercase colored_button text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+                        class="uppercase colored_button_lite text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
                         Explore
                     </a>
 
@@ -157,7 +157,7 @@
                                 @csrf
                                 <input type="hidden" name="topic_id" value="{{ $topic->id }}" />
                                 <button type="submit"
-                                    class="uppercase colored_button text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl mt-4 ml-4">Follow</button>
+                                    class="uppercase colored_button_lite text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl mt-4 ml-4">Follow</button>
                             </form>
                         @else
                         <form method="post" action="{{ route('following.delete') }}" class="flex items-center">
@@ -174,7 +174,7 @@
 
 
                 @if (isset(Auth::user()->id) && Auth::user()->id == $topic->user_id)
-                    {{-- <a class="uppercase colored_button text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+                    {{-- <a class="uppercase colored_button_lite text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
                 add Tags
             </a> --}}
                     {{-- <span class="float-right">

@@ -11,7 +11,7 @@
 
 <div class="w-4/5 m-auto pt-20">
     <div class="mb-4">
-        <a href="/blog/create" class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">Create Post</a>
+        <a href="/blog/create" class="uppercase mt-15 colored_button text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">Create Post</a>
     </div>
 
     @foreach($posts as $post)

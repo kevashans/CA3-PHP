@@ -87,11 +87,6 @@
     max-width: 100%;
     border-radius: 4px;
 }
-
-.colored_button {
-    background-color: #003C46; 
-}
-
     </style>
 </head>
 <body >
