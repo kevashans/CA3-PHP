@@ -52,11 +52,11 @@ Do not hesitate to contribute to the project by adapting or adding features ! Bu
 ## Features
 Our website provides the following functionality:
 
-*Accounts
+# Accounts
 - User Account Registration
 - Users can log in and log out
 
-*Forums (a collection of posts, allows better categorization)
+# Forums (a collection of posts, allows better categorization)
 - Users can create forums
 - Users can search forums
 - Users can filter forums by tags
@@ -66,11 +66,11 @@ Our website provides the following functionality:
 - Guests can filter forums by tags
 - Guests can view forums
 
-* Tags
+# Tags
 - Forums can be assigned by tags
 - Users can create Tags
 
-* Posts (within Forums)
+# Posts (within Forums)
 - Users can create posts
 - Users can edit posts
 - Users can view posts
@@ -78,7 +78,7 @@ Our website provides the following functionality:
 - Guests can view posts
 - Guests can search posts
 
-* Comments (within Posts)
+# Comments (within Posts)
 - Users can view comments
 - Users can comment
 - Users can reply to other comments
