@@ -1,4 +1,4 @@
-## Laravel 8 Complete Blog
+# Laravel 8 Complete Blog
 ## Wise Kevas
 <img alt="image" src="https://cdn.discordapp.com/emojis/1073643496814166056.webp?size=96&quality=lossless">
 
@@ -7,11 +7,11 @@ Join the conversation with Wise Kevas - the ultimate forum platform for creating
 
 •	Author: Kevas Hans & Matthew Riddell SD2B<br>
 
-## Requirements
+# Requirements
 •	PHP 7.3 or higher <br>
 •	Node 12.13.0 or higher <br>
 
-## Usage <br>
+# Usage <br>
 Setting up your development environment on your local machine: <br>
 ```
 git clone git@https://github.com/kevashans/CA3-PHP.git
@@ -23,7 +23,7 @@ php artisan cache:clear && php artisan config:clear
 php artisan serve
 ```
 
-## Before starting <br>
+# Before starting <br>
 Create a database <br>
 ```
 mysql
@@ -46,17 +46,17 @@ Migrate the tables
 php artisan migrate
 ```
 
-## Contributing
+# Contributing
 Do not hesitate to contribute to the project by adapting or adding features ! Bug reports or pull requests are welcome.
 
-## Features
+# Features
 Our website provides the following functionality:
 
-# Accounts
+## Accounts
 - User Account Registration
 - Users can log in and log out
 
-# Forums (a collection of posts, allows better categorization)
+## Forums (a collection of posts, allows better categorization)
 - Users can create forums
 - Users can search forums
 - Users can filter forums by tags
@@ -66,11 +66,11 @@ Our website provides the following functionality:
 - Guests can filter forums by tags
 - Guests can view forums
 
-# Tags
+## Tags
 - Forums can be assigned by tags
 - Users can create Tags
 
-# Posts (within Forums)
+## Posts (within Forums)
 - Users can create posts
 - Users can edit posts
 - Users can view posts
@@ -78,7 +78,7 @@ Our website provides the following functionality:
 - Guests can view posts
 - Guests can search posts
 
-# Comments (within Posts)
+## Comments (within Posts)
 - Users can view comments
 - Users can comment
 - Users can reply to other comments
