@@ -4,6 +4,8 @@ $topics_id = $_GET['topicId'];
 
 @extends('layouts.app')
 
+
+
 @section('content')
 <div class="background-image grid grid-cols-1 m-auto">
     <div class="flex text-gray-100 pt-10">
@@ -11,14 +13,37 @@ $topics_id = $_GET['topicId'];
             <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
                 Forum Posts
             </h1>
+            <form action="{{ route('blog.search') }}" method="GET" class="mt-7">
+                    {{-- <div class="flex flex-wrap justify-center mb-4">
+                    <div class="relative mr-4">
+                        <input
+                            class="w-full px-3 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            type="text" name="search" placeholder="Search" required />
+                    </div>
+                    <button
+                        class="px-3 py-2 text-white colored_button rounded-md hover:colored_button focus:outline-none focus:colored_button"
+                        type="submit">Search</button>
+                </div> --}}
+                    <div class="relative flex flex-wrap justify-center mb-4">
+                        <input
+                            class="w-full px-3 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            type="text" name="search" placeholder="Search" required />
+                        <button
+                            class="absolute right-0 top-0 bottom-0 px-3 py-2 text-white colored_button_lite rounded-md hover:colored_button focus:outline-none focus:colored_button">
+                            Search
+                        </button>
+                    </div>
 
-            @if (Auth::check())
+                    @if (Auth::check())
             <div class="pt-15 w-4/5 m-auto">
               <a href="/blog/create?topicId={{ $topics_id }}" class="colored_button_lite uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
               Create post
               </a>
             </div>
             @endif
+                    </form>
+
+            
             
         </div>
     </div>
